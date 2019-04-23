@@ -1,0 +1,28 @@
+<div>
+  <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef fxFlex="250px"> Name </mat-header-cell>
+      <mat-cell *matCellDef="let profile" fxFlex="250px"> {{profile.name}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef fxFlex="200px"> Title </mat-header-cell>
+      <mat-cell *matCellDef="let profile" fxFlex="200px"> {{profile.title}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="technologies">
+      <mat-header-cell *matHeaderCellDef fxFlex="200px"> Technologies </mat-header-cell>
+      <mat-cell *matCellDef="let profile" fxFlex="200px"> {{profile.technologies}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="experience">
+      <mat-header-cell *matHeaderCellDef fxFlex="100px" style="justify-content: center"> Experience </mat-header-cell>
+      <mat-cell *matCellDef="let profile" fxFlex="100px" style="justify-content: center"> {{profile.experience}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="view">
+      <mat-header-cell *matHeaderCellDef fxFlex="100px" style="justify-content: center"> View Profile</mat-header-cell>
+      <mat-cell *matCellDef="let profile" fxFlex="100px">
+        <button mat-raised-button color="primary" style="margin: 1px" (click)="viewProfile(profile)">View</button>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

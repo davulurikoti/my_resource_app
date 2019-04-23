@@ -1,0 +1,58 @@
+<mat-card>
+<div *ngIf="profile">
+  <mat-card-header>
+     <mat-card-title>
+        <section class="name">
+           {{(profile | async)?.name}}
+        </section>
+     </mat-card-title>
+     <mat-card-subtitle>
+       <section class="phone_number">
+         {{(profile | async)?.phone_number}}
+       </section>
+       <section class="email">
+         {{(profile | async)?.email}}
+       </section>
+       <section class="hold_by">
+         Hold by: {{(profile | async)?.hold_by}}
+       </section>
+    </mat-card-subtitle>
+  </mat-card-header>
+   
+ <section class="container" *ngIf="!(profile | async)?.hold_by">
+   <button mat-raised-button color="primary" style="margin: 1px" (click)="sendExam()">Send Exam</button>
+    <button mat-raised-button color="primary" style="margin: 1px">Make Call</button>
+   <button mat-raised-button color="primary" style="margin: 1px" (click)="selectThisProfile()">Select Profile</button>
+  </section>
+   <section class="container" *ngIf="(profile | async)?.hold_by == currentId">
+   <button mat-raised-button color="primary" style="margin: 1px" (click)="sendExam()">Send Exam</button>
+    <button mat-raised-button color="primary" style="margin: 1px">Make Call</button>
+    <button mat-raised-button color="primary" style="margin: 1px" (click)="releaseThisProfile()">Release Profile</button>
+  </section>
+  <form class="form">
+  <mat-form-field class="full-width">
+       <input matInput placeholder="your name" name="name" [(ngModel)]="currentComment.name">
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <textarea matInput placeholder="your comment" name="comment" [(ngModel)]="currentComment.comment"></textarea>
+  </mat-form-field>
+    <button mat-raised-button color="primary" style="margin: 1px" (click)="addComment()">Add Comment</button>
+</form>
+  
+   <section class="comments">
+   <div *ngFor="let comment of (profile | async)?.comments">
+    <mat-card style="margin: 1px;"> 
+      <mat-card-header>
+        <mat-card-subtitle>{{comment.name}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>{{comment.comment}}</mat-card-content>
+      </mat-card>
+   </div>
+    </section>
+
+</div>
+<section *ngIf="!profile">
+  Please click on view of any profile to view the details.
+</section>
+</mat-card>
+

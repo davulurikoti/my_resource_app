@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">Compose</mat-toolbar>
+<mat-card>
+<div class="container">
+  <mat-form-field>
+    <input matInput placeholder="To" [(ngModel)]="to">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Subject" [(ngModel)]="subject">
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput placeholder="Your message here" [(ngModel)]="message"></textarea>
+  </mat-form-field>
+  
+  <button mat-raised-button color="primary" style="margin: 1px" (click)="sendMail()">Send</button>
+</div>
+</mat-card>

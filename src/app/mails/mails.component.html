@@ -1,0 +1,45 @@
+<mat-toolbar color="primary">Inbox</mat-toolbar>
+<div class="container">
+  <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <ng-container matColumnDef="from">
+      <mat-header-cell *matHeaderCellDef fxFlex="150px"> From </mat-header-cell>
+      <mat-cell *matCellDef="let mail" fxFlex="150px">
+        <div *ngIf="mail.read">{{mail.from}}</div>
+        <div *ngIf="!mail.read"><b>{{mail.from}}</b></div>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="subject">
+      <mat-header-cell *matHeaderCellDef fxFlex="300px"> Subject </mat-header-cell>
+      <mat-cell *matCellDef="let mail" fxFlex="300px">
+        <div *ngIf="mail.read">{{mail.subject}}</div>
+        <div *ngIf="!mail.read"><b>{{mail.subject}}</b></div>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="date">
+      <mat-header-cell *matHeaderCellDef fxFlex="100px"> Date </mat-header-cell>
+      <mat-cell *matCellDef="let mail" fxFlex="100px">
+        <div *ngIf="mail.read">{{mail.date}}</div>
+        <div *ngIf="!mail.read"><b>{{mail.date}}</b></div>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="view">
+      <mat-header-cell *matHeaderCellDef fxFlex="100px" style="justify-content: center"> View Body</mat-header-cell>
+      <mat-cell *matCellDef="let mail" fxFlex="100px">
+        <button mat-raised-button color="primary" style="margin: 1px" (click)="displayBody(mail)">View</button>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <div *ngIf="currentMail.from" class="bodyofemail">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{currentMail.from}}</mat-card-title>
+        <mat-card-subtitle>{{currentMail.date}}</mat-card-subtitle>
+      </mat-card-header>
+  <mat-card-content>
+    <p [innerHTML]="currentMail.body"> </p>
+  </mat-card-content>
+  </mat-card>
+  </div>
+</div>

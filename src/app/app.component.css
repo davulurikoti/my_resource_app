@@ -1,0 +1,42 @@
+.mat-drawer-container{
+  height: 99.5%;
+}
+.mat-tab-nav-bar{
+  align-content: center;
+}
+.mat-drawer{
+  background: #333333;
+}
+
+.mat-icon{
+  fill: ghostwhite !important;
+  height: 35px !important;
+  width: 35px !important;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+}
+.containermini{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mat-drawer {
+    color: white !important;
+    font-weight: lighter !important;
+    font-size: 14px !important;
+}
+.img-fluid{
+  width: 80px;
+}
+.container2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+    

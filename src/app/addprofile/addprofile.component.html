@@ -1,0 +1,39 @@
+<mat-toolbar color="primary">Add Profile</mat-toolbar>
+<div class="container">
+  <mat-form-field>
+    <input matInput placeholder="Name" [(ngModel)]="blank_profile.name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Phone" type="number" [(ngModel)]="blank_profile.phone_number">
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput placeholder="Email addess" [(ngModel)]="blank_profile.email">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Title" [(ngModel)]="blank_profile.title">
+      <mat-option value="Java Developer">Java Developer</mat-option>
+      <mat-option value=".Net Developer">.Net Developer</mat-option>
+      <mat-option value="Python Developer">Python Developer</mat-option>
+      <mat-option value="Scrum Master">Scrum Master</mat-option>
+      <mat-option value="Testing Role">Test Role</mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <textarea matInput placeholder="Technologies" [(ngModel)]="blank_profile.technologies"></textarea>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput placeholder="Experience" type="number" [(ngModel)]="blank_profile.experience">
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput placeholder="Current Location" [(ngModel)]="blank_profile.currentLocation">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Preferred Locations" [(ngModel)]="blank_profile.preferredLocations">
+  </mat-form-field>
+  <button mat-raised-button color="primary" style="margin: 1px" (click)="addProfile()">Add Profile</button>
+</div>

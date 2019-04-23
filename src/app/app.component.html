@@ -1,0 +1,46 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!--<mat-progress-bar mode="determinate" value="40"></mat-progress-bar>-->
+<mat-drawer-container>
+  <mat-drawer mode="side" opened color="primary">
+    <div class="tcslogo">
+     <img src="assets/icons/tcs-logo.png" class="img-fluid"/>
+    </div>
+    <div class="container">
+      <div class="containermini" [routerLink]="['/allprofiles']">
+      <mat-icon class="item" svgIcon="accounts"></mat-icon>
+      <p class="item" [routerLink]="['/allprofiles']">
+        All Profiles
+      </p>
+      </div>
+      <div class="containermini" [routerLink]="['/compose']">
+      <mat-icon class="item" svgIcon="Compose"></mat-icon>
+      <p class="item" [routerLink]="['/compose']">
+        Compose
+      </p>
+      </div>
+      <div class="containermini" [routerLink]="['/mails']">
+      <mat-icon matBadge="{{unreadMails}}" matBadgePosition="above after" class="item" svgIcon="inbox"></mat-icon>
+      <p class="item" [routerLink]="['/mails']">
+        Inbox
+      </p>
+      </div>
+      <div class="containermini" [routerLink]="['/addprofile']">
+       <mat-icon class="item" svgIcon="addprofile"></mat-icon>
+      <p class="item" [routerLink]="['/addprofile']">
+        Add Profile
+      </p>
+      </div>
+    </div>
+    <div class="container2">
+      <mat-icon class="item" svgIcon="account"></mat-icon>
+      <p class="item">
+        My Account
+      </p>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
