@@ -641,12 +641,12 @@ THE SOFTWARE.
 
 @angular/material/table
 
-@angular/material/form-field
-
 @angular/material/card
 
 @angular/forms
 MIT
+
+@angular/material/form-field
 
 @angular/material/toolbar
 
