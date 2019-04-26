@@ -1,3 +1,6 @@
+#Live below
+https://davulurikoti.github.io/my_resource_app/allprofiles
+
 # ResourceManager
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
